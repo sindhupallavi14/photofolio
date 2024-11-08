@@ -1,10 +1,12 @@
-import './App.css';
+// import './App.css';
 
-function AlbumList()
+export default function AlbumList()
 {
     return(
         <>
-        
+        <div className='album-con'>
+           <img src=""/>
+        </div>
         </>
     )
 }

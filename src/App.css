@@ -96,3 +96,11 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.album-con
+{
+    width:25vw;
+    height:25vh;
+    background-color: rgb(247, 245, 218);
+    border-radius:  30px 30px 5px 5px;
+}

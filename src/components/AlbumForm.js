@@ -2,18 +2,22 @@
 // import './App.css';
 import React from "react";
 
+
 import { useState } from "react";
+import AlbumList from "./AlbumList";
 
 export default function AlbumForm() {
-    const []=useState();
+    const [addList,setAddList]=useState();
     const inputref=React.createRef();
+
     function handleClear(e) {
         e.preventDefault();
         inputref.current.value="";
-        
     }
     function handleCreate(e) {
         e.preventDefault();
+        // onclicking create the albumlist should be added means it displayed
+       
     }
     return (
         <div className="form">
@@ -23,6 +27,7 @@ export default function AlbumForm() {
                 <button className="clr-btn" onClick={handleClear}>Clear</button>
                 <button className="crt-btn" onClick={handleCreate}>Create</button>
             </form>
+            <AlbumList/>
         </div>
     );
 }
