@@ -1,7 +1,21 @@
-import picture from "./picture.png"
+import picture from "./picture.png";
+
+// import AlbumForm from ".src/components/AlbumForm.js";
+
+import AlbumForm from "./components/AlbumForm.js";
+
+
+
 import './App.css';
+import { useState } from "react";
 
 function App() {
+
+   const [showForm,setShowForm]=useState(false);
+  function handleForm()
+  {
+     setShowForm(prev=>!prev);
+  }
    return(
   
      <div className='main-page'> 
@@ -11,7 +25,14 @@ function App() {
 
        </div>
        <div className='body'>
+          <div className="con-1">
+            <h2>YOUR ALBUMS</h2>
+            <button className="add-album" onClick={handleForm}>Add Album</button>
+          </div>
+          <div className="con-2">
+             {showForm && <AlbumForm />}
 
+          </div>
        </div>
      </div> 
    

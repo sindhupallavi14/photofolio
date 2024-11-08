@@ -18,3 +18,81 @@
   width:30px;
   height:30px;
 }
+
+.con-1
+{
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+}
+.add-album
+{
+   border:2px solid rgb(11, 6, 6);
+   border-radius: 6px 6px ;
+   background-color: rgb(243, 245, 204);
+   width:100px;
+   height: 30px;
+   font-family:Verdana, Geneva, Tahoma, sans-serif;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+.add-album:hover
+{
+   background-color:  rgb(251, 255, 183);
+   height: 33px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.album-form
+{
+   border-radius: 7px 7px ;
+   background-color: aliceblue;
+   width:50vw;
+   height: 25vh;
+   padding-left: 50px;
+}
+
+.album-form input
+{
+   border:2px solid rgb(11, 6, 6);
+   border-radius: 6px 6px ;
+   background-color: azure;
+   width:90%;
+   height: 20%;
+   display: flex;
+}
+
+.clr-btn
+{ 
+  margin-left: 175px;
+  border-radius: 10px 10px ;
+  background-color: rgb(230, 39, 18);
+  width:80px;
+  height: 30px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid rgb(216, 124, 114);
+}
+
+.crt-btn
+{
+  border: 2px solid rgb(150, 197, 215);
+  margin: 18px;
+  border-radius: 9px 9px ;
+  background-color: rgb(120, 194, 224);
+  width:80px;
+  height: 30px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
