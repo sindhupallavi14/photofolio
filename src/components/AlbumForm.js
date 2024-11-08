@@ -7,18 +7,26 @@ import { useState } from "react";
 import AlbumList from "./AlbumList";
 
 export default function AlbumForm() {
-    const [addList,setAddList]=useState();
+    const [albumList,setAlbumList]=useState([]);
     const inputref=React.createRef();
 
     function handleClear(e) {
         e.preventDefault();
         inputref.current.value="";
     }
+
+    
     function handleCreate(e) {
         e.preventDefault();
-        // onclicking create the albumlist should be added means it displayed
-       
+        const albumname= inputref.current.value.trim();
+        if(albumname)
+        {
+            setAlbumList([...albumList,albumname]);
+            inputref.current.value="";
+        }
+
     }
+
     return (
         <div className="form">
             <form className="album-form">
@@ -27,7 +35,7 @@ export default function AlbumForm() {
                 <button className="clr-btn" onClick={handleClear}>Clear</button>
                 <button className="crt-btn" onClick={handleCreate}>Create</button>
             </form>
-            <AlbumList/>
+            <AlbumList albums={albumList}/>
         </div>
     );
 }
