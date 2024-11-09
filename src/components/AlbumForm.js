@@ -3,29 +3,30 @@
 import React from "react";
 
 
-import { useState } from "react";
+import { useRef } from "react";
 import AlbumList from "./AlbumList";
 
-export default function AlbumForm() {
-    const [albumList,setAlbumList]=useState([]);
-    const inputref=React.createRef();
+export default function AlbumForm({addAlbum}) {
+    
+    const inputref=useRef();
 
     function handleClear(e) {
         e.preventDefault();
         inputref.current.value="";
     }
 
-    
+
     function handleCreate(e) {
         e.preventDefault();
         const albumname= inputref.current.value.trim();
         if(albumname)
         {
-            setAlbumList([...albumList,albumname]);
+            addAlbum(albumname)
             inputref.current.value="";
         }
 
     }
+
 
     return (
         <div className="form">
@@ -35,7 +36,9 @@ export default function AlbumForm() {
                 <button className="clr-btn" onClick={handleClear}>Clear</button>
                 <button className="crt-btn" onClick={handleCreate}>Create</button>
             </form>
-            <AlbumList albums={albumList}/>
+            
+            <AlbumList />
+            
         </div>
     );
 }
