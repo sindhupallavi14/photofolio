@@ -57,18 +57,43 @@
    width:50vw;
    height: 25vh;
    padding-left: 50px;
+   position: relative;
 }
+.image-form
+{
+   border-radius: 7px 7px ;
+   background-color: aliceblue;
+   width:50vw;
+   height: 26vh;
+   padding-left: 50px;
+   position: relative;
+}
+.image-form input
+{
+   border-radius: 6px 6px ;
+   background-color: rgb(255, 255, 255);
+   width:90%;
+   height:17%;
+   display: flex;
+   border: 1px solid aliceblue;
+}
+
+.image-form input:hover
+{
+  border: 1px solid black;
+  transition:0.9s ease;
+
+}
+
 
 .album-form input
 {
-   
    border-radius: 6px 6px ;
    background-color: rgb(255, 255, 255);
    width:90%;
    height: 20%;
    display: flex;
    border: 1px solid aliceblue;
-
 }
 .album-form input:hover
 {
@@ -80,7 +105,8 @@
 
 .clr-btn
 { 
-  margin-left: 175px;
+  right:5%;
+  top:75%;
   border-radius: 10px 10px ;
   background-color: rgb(230, 39, 18);
   width:80px;
@@ -90,12 +116,14 @@
   font-weight: bold;
   cursor: pointer;
   border: 2px solid rgb(216, 124, 114);
+  position: absolute;
 }
 
 .crt-btn
 {
   border: 2px solid rgb(150, 197, 215);
-  margin: 18px;
+  right:17%;
+  top:75%;
   border-radius: 9px 9px ;
   background-color: rgb(120, 194, 224);
   width:80px;
@@ -104,6 +132,7 @@
   color: white;
   font-weight: bold;
   cursor: pointer;
+  position: absolute;
 }
 
 .albumlist-con{
@@ -154,4 +183,13 @@
    bottom:0;
    margin-left: 30px;
    margin-bottom:10px;   
+}
+
+.back-btn
+{
+  width:50px;
+  height:50px;
+  margin-left: 100px;
+  background-color: blanchedalmond;
+  border-radius: 50%;
 }

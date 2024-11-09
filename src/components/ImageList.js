@@ -1,15 +1,9 @@
-export default function ImageList()
+export default function ImageList({images=[]})
 {
     return(
         <>
-        <h1>Sindhu</h1>
-        <h1>Sindhu</h1>
-        <h1>Sindhu</h1>
-        <h1>Sindhu</h1>
-        <h1>Sindhu</h1>
-        <h1>Sindhu</h1>
-        <h1>Sindhu</h1>
-        <h1>Sindhu</h1>
+        
+       
         </>
     )
 }
