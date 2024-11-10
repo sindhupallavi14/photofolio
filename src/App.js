@@ -23,8 +23,6 @@ function App() {
     setShowImageForm((prev) => !prev);
   }
 
-  
-
   function handleAlbumClick(albumName) {
     setSelectedAlbum(albumName);  // Set the selected album
     setShowImageForm(false); 
@@ -51,6 +49,17 @@ function App() {
       return updatedImages;
     });
   }
+
+  function deleteimg(imageidx)
+  {
+        setImages((previmgs)=>
+        {
+          const updatedImages={...previmgs};
+
+          updatedImages[selectedAlbum].splice(imageidx,1);
+          return updatedImages;
+        })
+  }
   
 
   return (
@@ -70,9 +79,9 @@ function App() {
           {selectedAlbum ? (
             <>
               <img src={arrow} className="back-btn"  onClick={handleBackToAlbums}/>
-              {/* <h2>{selectedAlbum} - Image List</h2> */}
               {showImageForm && < ImageForm addImage={addImage} /> }<br/><br/>
-              <ImageList images={images[selectedAlbum] || []} />
+              <ImageList    deleteimg={deleteimg} 
+                            images={images[selectedAlbum] || []  } />
             </>
           ) : (
             <>
