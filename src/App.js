@@ -41,13 +41,17 @@ function App() {
      setImages((prevImages) => ({ ...prevImages, [albumName]: [] }));
   }
 
-  function addImage(ImageName,url)
-  {
-     setImages((prevImages)=>({
-      ...prevImages,
-      [selectedAlbum]:[...AlbumForm(prevImages[selectedAlbum] || []),{name : ImageName, url}]
-     }))
+  function addImage(imageName, url) {
+    setImages((prevImages) => {
+      const updatedImages = {
+        ...prevImages,
+        [selectedAlbum]: [...(prevImages[selectedAlbum] || []), { name: imageName, url }],
+      };
+      console.log("Updated Images:", updatedImages);
+      return updatedImages;
+    });
   }
+  
 
   return (
     <div className='main-page'>
@@ -67,7 +71,7 @@ function App() {
             <>
               <img src={arrow} className="back-btn"  onClick={handleBackToAlbums}/>
               {/* <h2>{selectedAlbum} - Image List</h2> */}
-              {showImageForm && < ImageForm addImage={addImage} /> }
+              {showImageForm && < ImageForm addImage={addImage} /> }<br/><br/>
               <ImageList images={images[selectedAlbum] || []} />
             </>
           ) : (

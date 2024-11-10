@@ -142,6 +142,14 @@
   display: flex;
   justify-content: space-evenly;
 }
+.imageList-con
+{
+  width:100%;
+  flex-wrap: wrap;
+  gap:20px;
+  display: flex;
+  justify-content: space-around;
+}
 .album-con
 {
     width:15vw;
@@ -152,6 +160,15 @@
     transition: border 0.2s ease;
 
     /* border: 5px solid rgb(226, 226, 226) ; */
+}
+.image-item
+{
+  width:25vw;
+  height:25vh;
+  background-color: rgb(226, 226, 226) ;
+  border-radius:  30px 30px 5px 5px;
+  position: relative;
+  transition: border 0.2s ease;
 }
 .album-imgcon
 {
@@ -164,6 +181,17 @@
    border-radius:  30px 30px 5px 5px;
 }
 
+.img-con
+{
+  position: absolute;
+  background-color: white;
+  width:90%;
+  height: 75%;
+  left:19px;
+  top:10px;
+  border-radius:  30px 30px 5px 5px;
+}
+
 .album-img{
  position: absolute;
  width:30%;
@@ -171,13 +199,21 @@
  left:64px;
  top:39px;
 }
+.img{
+ position: absolute;
+ width:90%;
+ height:90%;
+ left:18px;
+ top:9px;
+ border-radius:  30px 30px 5px 5px;
+}
 
 .album-con:hover
 {
    /* border:5px solid rgb(204, 174, 105); */
    background-color: rgb(244, 221, 188); 
 }
-.album-name
+.album-name,.img-name
 {
    position: absolute;
    bottom:0;
@@ -192,4 +228,23 @@
   margin-left: 100px;
   background-color: blanchedalmond;
   border-radius: 50%;
+}
+.edit{
+  width:30px;
+  height:30px;
+  position: absolute;
+  right:15%;
+  top:-9%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.delete{
+  width:30px;
+  height:30px;
+  position: absolute;
+  right:5%;
+  top:-9%;
+  z-index: 2;
+  cursor: pointer;
 }
