@@ -3,7 +3,7 @@ import bin from "./trash-bin.png";
 import { useState } from "react";
 
 export default function ImageList({images=[],
-    deleteimg
+    deleteimg,editimage
 })
 {
     const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -17,8 +17,8 @@ export default function ImageList({images=[],
                 >
                     {hoveredIndex === idx && (
                         <div className="icons">
-                            <img src={edit} className="edit"/>
-                            <img src={bin} className="delete" onClick={()=>deleteimg(idx)}/>
+                            <img src={edit} className="edit" onClick={()=>editimage(image)}/>
+                            <img src={bin} className="delete" onClick={()=>deleteimg(image.id)}/>
                         </div>
                     )}
                     <div className="img-con">

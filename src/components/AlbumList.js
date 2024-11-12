@@ -9,12 +9,12 @@ export default function AlbumList({ albums = [], onAlbumClick }) {
         <div
           key={index}
           className="album-con"
-          onClick={() => onAlbumClick(album)} 
+          onClick={() => onAlbumClick(album.name)} 
         >
           <div className="album-imgcon">
             <img src={photos} className="album-img" alt="Album Cover" />
           </div>
-          <h2 className="album-name">{album}</h2>
+          <h2 className="album-name">{album.name}</h2>
         </div>
       ))}
     </div>
