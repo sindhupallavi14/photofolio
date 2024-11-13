@@ -22,8 +22,8 @@ function App() {
   const [imgtoupd,setImgtoupd]=useState(null);
 
   function handleEditImage(image)  {
-    setImgtoupd(image); // Set the image to be edited
-    setShowImageForm(true); // Show the ImageForm for editing
+    setImgtoupd(image); 
+    setShowImageForm(true); 
   };
 
   async function updateImage(Imagename,url)
@@ -34,15 +34,18 @@ function App() {
          await updateDoc(imgref,{name:Imagename,url:url})
          toast.success("Image Updated successfully ")
          setImgtoupd(null);
+         setShowImageForm(false);
       }
   }
 
    function handleForm() {
     setShowForm((prev) => !prev);
+    
   }
 
   function handleImageForm() {
     setShowImageForm((prev) => !prev);
+    setImgtoupd(null);
   }
 
   function handleAlbumClick(albumName) {
@@ -132,7 +135,7 @@ function App() {
         // })
         const imgref=doc(db,"images",imageidx);
         await deleteDoc(imgref);
-        toast.success("Expense deleted successfully.");
+        toast.success("Image deleted successfully.");
   }
   
 
@@ -147,8 +150,8 @@ function App() {
 
       <div className='body'>
         <div className="con-1">
-          <h2>YOUR ALBUMS</h2>
-          <button className="add-album" onClick={ selectedAlbum? handleImageForm : handleForm}>{selectedAlbum ? "Add Image" : "Add Album"}</button>
+          <h2>{selectedAlbum ?`Images from ${selectedAlbum}`: "Your Albums"}</h2>
+          <button className="add-album" onClick={ selectedAlbum? handleImageForm : handleForm}>{selectedAlbum ?(imgtoupd ? "Cancel" : "Add Image") : "Add Album"}</button>
         </div>
 
         <div className="con-2">

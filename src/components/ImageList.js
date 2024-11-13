@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function ImageList({images=[],
     deleteimg,editimage
+    
 })
 {
     const [hoveredIndex, setHoveredIndex] = useState(null);
